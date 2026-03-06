@@ -299,7 +299,7 @@
 
         <div class="balance-card">
             <div class="bal-title">Total Balance</div>
-            <div class="bal-amt"><span id="u-bal">0.00</span> <span id="cur-sym" class="currency">TK</span></div>
+            <div class="bal-amt"><span id="u-bal">0.00</span> <span id="cur-sym" class="currency">Gold coin</span></div>
             <div class="stats">
                 <div class="stat-box"><h4 id="u-earn">0.00</h4><p>Earned</p></div>
                 <div class="stat-box"><h4 id="u-ref">0</h4><p>Referrals</p></div>
@@ -320,7 +320,7 @@
                 <i class="fas fa-hand-holding-usd" style="font-size: 2rem; color: var(--gold);"></i>
                 <h3 style="margin-top: 10px;">রেফার বোনাস</h3>
                 <div class="ref-big-amt"><span id="ref-bonus-disp">0</span> Gold coin</div>
-                <p class="ref-text">বন্ধুদের সাথে লিংকটি শেয়ার করুন। তারা জয়েন করলেই আপনি পাবেন <span id="ref-bonus-txt" style="font-weight:700; color:var(--text)">0</span> টাকা বোনাস ✅</p>
+                <p class="ref-text">বন্ধুদের সাথে লিংকটি শেয়ার করুন। তারা জয়েন করলেই আপনি পাবেন <span id="ref-bonus-txt" style="font-weight:700; color:var(--text)">0</span> সোনার মুদ্রা বোনাস ✅</p>
                 
                 <div class="box" style="margin-top: 20px; text-align: left;">
                     <input id="ref-link" class="inp" readonly style="text-align:center; background:#f8f9fa;">
@@ -534,7 +534,7 @@
         }
 
         function renderAll() {
-            const sym = appState.config.currencySymbol || "TK";
+            const sym = appState.config.currencySymbol || "Gold coin";
             document.querySelectorAll('.currency').forEach(e => e.innerText = sym);
             
             const u = appState.user;
@@ -586,7 +586,7 @@
                 <div class="mission-item">
                     <div class="mission-left">
                         <h4>${targetBn} জন রেফার করুন</h4>
-                        <p>পুরস্কার: ${rewardBn} Gold coin</p>
+                        <p>পুরস্কার: ${rewardBn} টাকা</p>
                     </div>
                     <button class="btn-mission ${btnState}" ${action}>${btnTxt}</button>
                 </div>`;
@@ -607,7 +607,7 @@
             await api('updateBalance', 'POST', { id: appState.user.id, amount: reward });
             
             hideLoader();
-            toast(`অভিনন্দন! +${reward} Gold coin`);
+            toast(`অভিনন্দন! +${reward} টাকা`);
             tg.HapticFeedback.notificationOccurred('success');
         }
 
@@ -637,7 +637,7 @@
                     <i class="fas fa-play"></i>
                     <h4>Ad Slot ${i+1}</h4>
                     <span>${done}/${limit} Watched</span>
-                    <small class="ad-bonus">Bonus: ${reward} TK</small>
+                    <small class="ad-bonus">Bonus: ${reward} Gold coin</small>
                 </div>`;
             });
         }
@@ -666,7 +666,7 @@
         function renderTasks() {
             const el = document.getElementById('task-area'); el.innerHTML = '';
             const tasks = appState.config.webTasks || {};
-            const sym = appState.config.currencySymbol || "TK";
+            const sym = appState.config.currencySymbol || "Gold coin";
             const now = Date.now();
             let pending=[], completed=[];
 
@@ -738,7 +738,7 @@
             const amt = parseFloat(document.getElementById('w-amt').value);
             const methodSelect = document.getElementById('w-method');
             const selectedMethodName = methodSelect.value;
-            const sym = appState.config.currencySymbol || "TK";
+            const sym = appState.config.currencySymbol || "Gold coin";
 
             const methodObj = (appState.config.withdrawMethods || []).find(m => m.name === selectedMethodName);
             const methodMin = methodObj ? methodObj.min : (appState.config.minWithdrawAmount || 10);
