@@ -586,7 +586,7 @@
                 <div class="mission-item">
                     <div class="mission-left">
                         <h4>${targetBn} জন রেফার করুন</h4>
-                        <p>পুরস্কার: ${rewardBn} টাকা</p>
+                        <p>পুরস্কার: ${rewardBn} Gold coin</p>
                     </div>
                     <button class="btn-mission ${btnState}" ${action}>${btnTxt}</button>
                 </div>`;
@@ -607,7 +607,7 @@
             await api('updateBalance', 'POST', { id: appState.user.id, amount: reward });
             
             hideLoader();
-            toast(`অভিনন্দন! +${reward} টাকা`);
+            toast(`অভিনন্দন! +${reward} Gold coin`);
             tg.HapticFeedback.notificationOccurred('success');
         }
 
