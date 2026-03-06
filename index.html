@@ -607,7 +607,7 @@
             await api('updateBalance', 'POST', { id: appState.user.id, amount: reward });
             
             hideLoader();
-            toast(`অভিনন্দন! +${reward} টাকা`);
+            toast(`অভিনন্দন! +${reward} Gold coin`);
             tg.HapticFeedback.notificationOccurred('success');
         }
 
