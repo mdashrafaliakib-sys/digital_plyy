@@ -319,7 +319,7 @@
             <div class="ref-hero">
                 <i class="fas fa-hand-holding-usd" style="font-size: 2rem; color: var(--gold);"></i>
                 <h3 style="margin-top: 10px;">রেফার বোনাস</h3>
-                <div class="ref-big-amt"><span id="ref-bonus-disp">0</span> Gold coin</div>
+                <div class="ref-big-amt"><span id="ref-bonus-disp">0</span> সোনার মুদ্রা</div>
                 <p class="ref-text">বন্ধুদের সাথে লিংকটি শেয়ার করুন। তারা জয়েন করলেই আপনি পাবেন <span id="ref-bonus-txt" style="font-weight:700; color:var(--text)">0</span> সোনার মুদ্রা বোনাস ✅</p>
                 
                 <div class="box" style="margin-top: 20px; text-align: left;">
@@ -586,7 +586,7 @@
                 <div class="mission-item">
                     <div class="mission-left">
                         <h4>${targetBn} জন রেফার করুন</h4>
-                        <p>পুরস্কার: ${rewardBn} টাকা</p>
+                        <p>পুরস্কার: ${rewardBn} সোনার মুদ্রা</p>
                     </div>
                     <button class="btn-mission ${btnState}" ${action}>${btnTxt}</button>
                 </div>`;
@@ -607,7 +607,7 @@
             await api('updateBalance', 'POST', { id: appState.user.id, amount: reward });
             
             hideLoader();
-            toast(`অভিনন্দন! +${reward} Gold coin`);
+            toast(`অভিনন্দন! +${reward} টাকা`);
             tg.HapticFeedback.notificationOccurred('success');
         }
 
@@ -645,7 +645,7 @@
         function watchAd(id, net) {
             showLoader();
             setTimeout(() => { hideLoader(); }, 500); // UI visual feedback
-            toast("Loading..."); tg.HapticFeedback.impactOccurred('light');
+            toast("Loading..."); tg.HapticFe6edback.impactOccurred('light');
             let p;
             if(net==='monetag' && window[`show_${id}`]) p = window[`show_${id}`]();
             else if(net==='gigapub' && window.showGiga) p = window.showGiga();
