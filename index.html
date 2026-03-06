@@ -252,10 +252,10 @@
     <div id="join-overlay" class="channel-overlay" style="display: none;">
         <div class="join-card">
             <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
-            <h2>অ্যাক্সেস ব্লকড!</h2>
-            <p>অ্যাপটি ব্যবহার করতে এবং রেফার বোনাস পেতে নিচের দুটি চ্যানেলে জয়েন করা বাধ্যতামূলক।</p>
-            <a href="https://t.me/Eid_Gift_Box_Earning_Zone" target="_blank" class="join-btn" onclick="openChannel(this.href); return false;"><i class="fab fa-telegram-plane"></i> প্রোমোশন চ্যানেল</a>
-            <a href="https://t.me/siyam123siyamm" target="_blank" class="join-btn" onclick="openChannel(this.href); return false;"><i class="fab fa-telegram-plane"></i> পেমেন্ট চ্যানেল</a>
+            <h2>🔓অ্যাক্সেস লক!</h2>
+            <p>অ্যাপটি ব্যবহার করতে এবং রেফার বোনাস পেতে নিচের দুটি চ্যানেলে জয়েন করা বাধ্যতামূলক!✔️</p>
+            <a href="https://t.me/siyam123siyamm" target="_blank" class="join-btn" onclick="openChannel(this.href); return false;"><i class="fab fa-telegram-plane"></i> প্রোমোশন চ্যানেল</a>
+            <a href="https://t.me/My_Earning_Zone_In" target="_blank" class="join-btn" onclick="openChannel(this.href); return false;"><i class="fab fa-telegram-plane"></i> পেমেন্ট চ্যানেল</a>
             <button onclick="checkMembership()" class="verify-btn">আমি জয়েন করেছি (Verify)</button>
         </div>
     </div>
@@ -336,7 +336,7 @@
         <div id="p-mission" class="page">
             <div class="sec-head"><i class="fas fa-flag-checkered"></i> স্পেশাল মিশন</div>
             <div style="background:var(--surface); padding:15px; border-radius:20px; text-align:center; margin-bottom:15px;">
-                <p style="font-size:0.9rem; color:#636e72;">বোনাস পেতে রেফার টার্গেট পূরণ করুন!</p>
+                <p style="font-size:0.9rem; color:#636e72;">🎉 বোনাস পেতে রেফার টার্গেট পূরণ করুন!</p>
             </div>
             <div id="mission-area"></div>
         </div>
@@ -354,7 +354,7 @@
             <div class="sec-head"><i class="fas fa-wallet"></i> Withdraw</div>
             <div class="box">
                 <div class="w-rules">
-                    <p>ℹ️ উত্তোলনের জন্য <span id="min-w-ref" style="font-weight:700; color:var(--text)">0</span> টি অ্যাক্টিভ রেফার প্রয়োজন।</p>
+                    <p>⚠️ উত্তোলনের জন্য <span id="min-w-ref" style="font-weight:700; color:var(--text)">0</span> টি অ্যাক্টিভ রেফার প্রয়োজন! এবং উত্তোলন ফি ৫% ✔️</p>
                 </div>
                 <p id="w-msg" style="color:var(--danger); font-size:0.8rem; display:none; margin-bottom:10px;"></p>
                 <div class="input-wrap"><i class="fas fa-university"></i><select id="w-method" class="inp"></select></div>
@@ -454,7 +454,7 @@
             } else {
                 tg.HapticFeedback.notificationOccurred('error');
                 showErrorShake();
-                toast("আপনি এখনো সবগুলো চ্যানেলে জয়েন করেননি!", true);
+                toast("⚠️ আপনি এখনো সবগুলো চ্যানেলে জয়েন করেননি!", true);
             }
         }
 
@@ -555,11 +555,11 @@
 
         // --- UPDATED MISSIONS LOGIC ---
         const MISSION_LIST = [
-            { id: 'm20', target: 20, reward: 300 },
+            { id: 'm20', target: 20, reward: 200 },
             { id: 'm30', target: 30, reward: 400 },
             { id: 'm50', target: 50, reward: 600 },
-            { id: 'm70', target: 70, reward: 800 },
-            { id: 'm100', target: 100, reward: 1000 }
+            { id: 'm70', target: 70, reward: 900 },
+            { id: 'm100', target: 100, reward: 1050 }
         ];
 
         function renderMissions() {
@@ -571,7 +571,7 @@
                 let btnState = ''; let btnTxt = 'লক করা'; let action = '';
 
                 if (claimedIds.includes(m.id)) {
-                    btnState = 'done'; btnTxt = 'সম্পন্ন';
+                    btnState = 'done'; btnTxt = '🎉 সম্পন্ন';
                 } else if (refs >= m.target) {
                     btnState = 'active'; btnTxt = 'ক্লেম করুন';
                     action = `onclick="claimMission('${m.id}', ${m.reward})"`;
@@ -607,7 +607,7 @@
             await api('updateBalance', 'POST', { id: appState.user.id, amount: reward });
             
             hideLoader();
-            toast(`অভিনন্দন! +${reward} টাকা`);
+            toast(`🎉 অভিনন্দন! +${reward} সোনার মুদ্রা`);
             tg.HapticFeedback.notificationOccurred('success');
         }
 
@@ -645,14 +645,14 @@
         function watchAd(id, net) {
             showLoader();
             setTimeout(() => { hideLoader(); }, 500); // UI visual feedback
-            toast("Loading..."); tg.HapticFe6edback.impactOccurred('light');
+            toast("Loading..."); tg.HapticFeedback.impactOccurred('light');
             let p;
             if(net==='monetag' && window[`show_${id}`]) p = window[`show_${id}`]();
             else if(net==='gigapub' && window.showGiga) p = window.showGiga();
             else { toast("Not Ready"); return; }
 
             p.then(async () => {
-                const r = appState.config.adReward || 0.3;
+                const r = appState.config.adReward || 0.5;
                 appState.user.balance += r;
                 appState.user.totalEarned += r;
                 if(!appState.user.dailyAds) appState.user.dailyAds = {};
