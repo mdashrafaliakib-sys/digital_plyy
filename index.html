@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Earn Wallet</title>
+    <title>Eid_Gift_Box_Bot</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
@@ -354,7 +354,7 @@
             <div class="sec-head"><i class="fas fa-wallet"></i> Withdraw</div>
             <div class="box">
                 <div class="w-rules">
-                    <p>⚠️ উত্তোলনের জন্য <span id="min-w-ref" style="font-weight:700; color:var(--text)">0</span> টি অ্যাক্টিভ রেফার প্রয়োজন! এবং উত্তোলন ফি ৫% ✔️</p>
+                    <p>⚠️ উত্তোলনের জন্য <span id="min-w-ref" style="font-weight:700; color:var(--text)">0</span> টি অ্যাক্টিভ রেফার প্রয়োজন! এবং উত্তোলন ফি ১০% ✔️</p>
                 </div>
                 <p id="w-msg" style="color:var(--danger); font-size:0.8rem; display:none; margin-bottom:10px;"></p>
                 <div class="input-wrap"><i class="fas fa-university"></i><select id="w-method" class="inp"></select></div>
@@ -555,11 +555,14 @@
 
         // --- UPDATED MISSIONS LOGIC ---
         const MISSION_LIST = [
-            { id: 'm20', target: 20, reward: 200 },
-            { id: 'm30', target: 30, reward: 400 },
+            { id: 'm25', target: 25, reward: 250 },
+            { id: 'm40', target: 40, reward: 430 },
             { id: 'm50', target: 50, reward: 600 },
-            { id: 'm70', target: 70, reward: 900 },
-            { id: 'm100', target: 100, reward: 1050 }
+            { id: 'm70', target: 70, reward: 800 },
+	   	    { id: 'm80', target: 80, reward: 900 },
+            { id: 'm100', target: 100, reward: 1050 },
+		    { id: 'm200', target: 200, reward: 2000 },
+		    { id: 'm250', target: 250, reward: 2500 }
         ];
 
         function renderMissions() {
