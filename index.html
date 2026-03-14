@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Eid_Gift_Box_Bot1</title>
+    <title>Earn Wallet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <style>
         /* --- MAIN APP CSS --- */
-       :root { 
+         :root { 
             --primary: #009432; /* Islamic Green */
             --secondary: #FFC312; /* Golden Salami Color */
             --bg: #f1f2f6; 
@@ -20,7 +20,7 @@
             --danger: #ff4757; 
             --success: #2ed573; 
         }
-          * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--bg); color: var(--text); padding-bottom: 100px; -webkit-tap-highlight-color: transparent; }
         #app { max-width: 480px; margin: 0 auto; min-height: 100vh; position: relative; display: none; }
 
@@ -259,7 +259,6 @@
 </head>
 <body>
 
-    </div>
     <!-- CHANNEL JOIN OVERLAY (MANDATORY) -->
     <div id="join-overlay" class="channel-overlay" style="display: none;">
         <div class="join-card">
@@ -284,8 +283,8 @@
             <div class="core-ring"></div>
             <div class="core-logo"><i class="fas fa-bolt"></i></div>
           </div>
-          <div class="loader-title">Loading...</div>
-          <div class="loader-sub">আপনার ডেটা প্রস্তুত হচ্ছে… একটু অপেক্ষা করুন</div>
+          <div class="loader-title">⏳Loading...</div>
+          <div class="loader-sub">⚡আপনার ডেটা প্রস্তুত হচ্ছে… একটু অপেক্ষা করুন! 💠</div>
           <div class="loader-dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         </div>
     </div>
@@ -311,7 +310,7 @@
 
         <div class="balance-card">
             <div class="bal-title">Total Balance</div>
-            <div class="bal-amt"><span id="u-bal">0.00</span> <span id="cur-sym" class="currency">Gold coin</span></div>
+            <div class="bal-amt"><span id="u-bal">0.00</span> <span id="cur-sym" class="currency">TK</span></div>
             <div class="stats">
                 <div class="stat-box"><h4 id="u-earn">0.00</h4><p>Earned</p></div>
                 <div class="stat-box"><h4 id="u-ref">0</h4><p>Referrals</p></div>
@@ -331,8 +330,8 @@
             <div class="ref-hero">
                 <i class="fas fa-hand-holding-usd" style="font-size: 2rem; color: var(--gold);"></i>
                 <h3 style="margin-top: 10px;">রেফার বোনাস</h3>
-                <div class="ref-big-amt"><span id="ref-bonus-disp">0</span> সোনার মুদ্রা</div>
-                <p class="ref-text">বন্ধুদের সাথে লিংকটি শেয়ার করুন। তারা জয়েন করলেই আপনি পাবেন <span id="ref-bonus-txt" style="font-weight:700; color:var(--text)">0</span> সোনার মুদ্রা বোনাস ✅</p>
+                <div class="ref-big-amt"><span id="ref-bonus-disp">0</span> ৳</div>
+                <p class="ref-text">🎉.বন্ধুদের সাথে লিংকটি শেয়ার করুন তারা জয়েন করলেই আপনি পাবেন! <span id="ref-bonus-txt" style="font-weight:700; color:var(--text)">0</span>৳ বোনাস!💰</p>
                 
                 <div class="box" style="margin-top: 20px; text-align: left;">
                     <input id="ref-link" class="inp" readonly style="text-align:center; background:#f8f9fa;">
@@ -395,7 +394,7 @@
         const API_URL = "https://cold-dewm.mdashrafaliakib.workers.dev"; 
         
         // TELEGRAM BOT CONFIG FOR VERIFICATION
-        const BOT_TOKEN = "8252453072:AAFkC4hqO6o7pT5apVpieU7-0K4xULo1ke0";
+         const BOT_TOKEN = "8252453072:AAFkC4hqO6o7pT5apVpieU7-0K4xULo1ke0";
         const CHANNELS_TO_JOIN = ["-1003032580624", "-1002618352183"];
 
         const tg = window.Telegram.WebApp;
@@ -546,7 +545,7 @@
         }
 
         function renderAll() {
-            const sym = appState.config.currencySymbol || "Gold coin";
+            const sym = appState.config.currencySymbol || "TK";
             document.querySelectorAll('.currency').forEach(e => e.innerText = sym);
             
             const u = appState.user;
@@ -567,14 +566,15 @@
 
         // --- UPDATED MISSIONS LOGIC ---
         const MISSION_LIST = [
-            { id: 'm30', target: 30, reward: 300 },
-            { id: 'm50', target: 50, reward: 500 },
-            { id: 'm80', target: 80, reward: 800 },
-            { id: 'm100', target: 100, reward: 1000 },
-	   	    { id: 'm130', target: 130, reward: 1300 },
-            { id: 'm170', target: 170, reward: 1500 },
-		    { id: 'm200', target: 200, reward: 2000 },
-		    { id: 'm280', target: 280, reward: 2900 }
+            { id: 'm30', target: 30, reward: 10 },
+            { id: 'm70', target: 70, reward: 20 },
+            { id: 'm90', target: 90, reward: 30 },
+            { id: 'm110', target: 110, reward: 40 },
+            { id: 'm170', target: 170, reward: 50 }, 
+            { id: 'm200', target: 200, reward: 60 },
+            { id: 'm250', target: 250, reward: 70 }, 
+            { id: 'm300', target: 300, reward: 100 } 
+          
         ];
 
         function renderMissions() {
@@ -583,7 +583,7 @@
             const claimedIds = JSON.parse(localStorage.getItem(`missions_${appState.user.id}`) || "[]");
 
             MISSION_LIST.forEach(m => {
-                let btnState = ''; let btnTxt = 'লক করা'; let action = '';
+                let btnState = ''; let btnTxt = '🔓লক করা'; let action = '';
 
                 if (claimedIds.includes(m.id)) {
                     btnState = 'done'; btnTxt = '🎉 সম্পন্ন';
@@ -601,7 +601,7 @@
                 <div class="mission-item">
                     <div class="mission-left">
                         <h4>${targetBn} জন রেফার করুন</h4>
-                        <p>পুরস্কার: ${rewardBn} সোনার মুদ্রা</p>
+                        <p>পুরস্কার: ${rewardBn} টাকা</p>
                     </div>
                     <button class="btn-mission ${btnState}" ${action}>${btnTxt}</button>
                 </div>`;
@@ -622,7 +622,7 @@
             await api('updateBalance', 'POST', { id: appState.user.id, amount: reward });
             
             hideLoader();
-            toast(`🎉 অভিনন্দন! +${reward} সোনার মুদ্রা`);
+            toast(`🎉 অভিনন্দন! +${reward} টাকা`);
             tg.HapticFeedback.notificationOccurred('success');
         }
 
@@ -652,7 +652,7 @@
                     <i class="fas fa-play"></i>
                     <h4>Ad Slot ${i+1}</h4>
                     <span>${done}/${limit} Watched</span>
-                    <small class="ad-bonus">Bonus: ${reward} Gold coin</small>
+                    <small class="ad-bonus">Bonus: ${reward} TK</small>
                 </div>`;
             });
         }
@@ -681,7 +681,7 @@
         function renderTasks() {
             const el = document.getElementById('task-area'); el.innerHTML = '';
             const tasks = appState.config.webTasks || {};
-            const sym = appState.config.currencySymbol || "Gold coin";
+            const sym = appState.config.currencySymbol || "TK";
             const now = Date.now();
             let pending=[], completed=[];
 
@@ -753,7 +753,7 @@
             const amt = parseFloat(document.getElementById('w-amt').value);
             const methodSelect = document.getElementById('w-method');
             const selectedMethodName = methodSelect.value;
-            const sym = appState.config.currencySymbol || "Gold coin";
+            const sym = appState.config.currencySymbol || "TK";
 
             const methodObj = (appState.config.withdrawMethods || []).find(m => m.name === selectedMethodName);
             const methodMin = methodObj ? methodObj.min : (appState.config.minWithdrawAmount || 10);
